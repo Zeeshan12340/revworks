@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<%= stylesheet_link_tag 'bootstrap.css' %>
+<% if user_signed_in? %>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info">
+        <%= msg %>
+      </div>
+    <% end %>
+    </br>
+    <p style="text-align: right;" class="text-light"><%= link_to 'home', root_path, method: :get, :class => 'navbar-link' %>&nbsp;&nbsp;
+    <strong>Money: <%= current_user.money.to_i %> </strong>&nbsp;&nbsp;<strong><%= current_user.email %></strong></p>
+    <div class="container text-center pt-5  bg-light bg-gradient">
+        <h2 class="pb-3">Transfer Money</h2>
+        <p>Here you can transfer money to other users. Use the form below:</p>
+        <p>Note: Right now, you can only send/recieve to/from one other user.</p>
+        
+        <form action="/site/transfer_money" method="POST">
+            <label for="email">Email:</label>
+
+            <input class="form-control mb-3" type="text" name="email" id="uname">
+
+            <label for="amnt">Amount:</label>
+
+            <input class="form-control mb-3" type="number" name="amount" id="amnt">
+
+            <input class="btn btn-primary btn-block mb-2" type="submit" value="Transfer">
+        </form>
+    </div>
+	
+<% else %>
+	<% redirect_to :new_user_session %>
+<% end %>
+</body>
+</html>
+

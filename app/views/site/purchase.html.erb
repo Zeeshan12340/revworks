@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<%= stylesheet_link_tag 'bootstrap.css' %>
+<% if user_signed_in? %>
+	<% flash.each do |type, msg| %>
+	  <div class="alert alert-info">
+	  	<%= msg %>
+	  </div>
+	<% end %>
+
+	</br><p style="text-align: right;"><%= link_to 'home', root_path, method: :get, :class => 'navbar-link' %>&nbsp;&nbsp;<strong class="text-light">Money: <%= current_user.money.to_i %> </strong>&nbsp;&nbsp;</p>
+	<h1 style="text-align: center;">Product Page</h1>
+
+	<!-- table -->
+	<div class="container text-center text-dark bg-white">
+        	<table class="table table-stripped table-bordered">
+                <tbody>
+                    <tr>
+                        <th>
+                            Item
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Buy
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            Password Generator
+                        </td>
+                        <td style="text-align: center;">
+                            This is our premium password generator. It gives you access to some juicy extra features to play with!<br>
+                            What's that? You want to know what the features are? It's a surprise...
+                        </td>
+                        <td style="text-align: center;">
+                            10
+                        </td>
+                        <td>
+                            <%= button_to "Buy", site_buy_product_path, method: :get %>
+							</script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+<% else %>
+	<% redirect_to :new_user_session %>
+<% end %>
+</html>
+
