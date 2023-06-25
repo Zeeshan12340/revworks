@@ -31,8 +31,13 @@ class SiteController < ApplicationController
       # check if email matches revworks.thm and amount is integer
       if email.match(/\A([\w+\-].?)+@revworks\.thm\z/) and amount.match(/\A[+-]?\d+\z/)
 
+        # check if amount is negative, because otherwise user transfers negative value
+        # which increments his own amount. amount - (-value)
+        if amount.to_i < 0
+          redirect_to :site_transfer, notice: "You can not transfer negative amount to another user."
+
         # check if user has the amount to transfer
-        if amount.to_i > current_user.money
+        elsif amount.to_i > current_user.money
           redirect_to :site_transfer, notice: "You don't have enough money to transfer."
         else
 
