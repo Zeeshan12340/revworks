@@ -14,6 +14,7 @@ RUN apt update && \
     su - postgres -c "yes '${POSTGRES_PASSWORD}' | createuser -P -s '${POSTGRES_USER}'" && \
     gem install bundle rails && \
     bundle3.0 install && \
+    EDITOR="echo" bin/rails credentials:edit && \
     bin/rails db:create && \
     bin/rails db:migrate && \
     bin/rake assets:precompile
