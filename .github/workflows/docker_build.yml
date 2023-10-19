@@ -1,0 +1,29 @@
+name: Docker Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docker:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build Docker image
+      run: |
+        docker build -t revworks:latest .
+
+    - name: Run Container
+      run: |
+        docker run -d -p 3000:3000 --name revworks revworks:latest
+    
+    - name: Wait for services to be started
+      run: |
+        while true; do
+          sleep 5
+          docker logs revworks | grep "Listening on http://0.0.0.0:3000" && exit 0
+        done
