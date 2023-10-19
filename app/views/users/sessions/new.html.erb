@@ -6,7 +6,7 @@
 <body class="font-sans">
   <div class="content">
 <%= stylesheet_link_tag 'app.css' %>
-<img src="../images/logo.png" class="logo">
+<%= image_tag "logo.png", alt: "logo", class: "navbar-brand navbar-logo logo-1" %>
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

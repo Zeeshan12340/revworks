@@ -132,7 +132,6 @@ h6 {
 	position: relative;
 }
 .banner {
-	background:url(images/bg1.jpg) no-repeat 0% 0% / 100% 100%;
 	color:#ffffff;
 	text-align: center;
 	width: 100%;
@@ -446,7 +445,6 @@ h6 {
 	background-color: #1c1c1c;
 }
 .testimonials {
-	background:url(images/bg1.jpg) no-repeat 0% 0% / 100% 100%;
 	width:100%;
 }
 .testimonials-overlay {

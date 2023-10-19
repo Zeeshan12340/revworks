@@ -24,7 +24,7 @@ default: &default
 production:
   <<: *default
   database: revworks_production
-  username: postgres
+  username: stephen
   password: password
   host: localhost
   port: 5432

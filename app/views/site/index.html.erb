@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" type="image/x-icon" href="https://i.imgur.com/PL9uJDp.png">
 
 <title>Welcome - revworks.thm</title>
-<link rel="stylesheet" type="text/css" href="style.css"/>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css"/>
-<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css"/>
-<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css"/>
+<%= stylesheet_link_tag 'style', media: 'all' %>
+<%= stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.1.0/css/all.css', integrity: 'sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt', crossorigin: 'anonymous' %>
+<%= stylesheet_link_tag 'jquery.fancybox.min', 'owl.carousel.min', 'owl.theme.default.min', media: 'all' %>
+
 
 <!-- Font Google -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -20,7 +20,7 @@
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
-  <div class="container"> <a class="navbar-brand navbar-logo" href="#"> <img src="images/logo-white.png" alt="logo" class="logo-1"> </a>
+  <div class="container"> <%= image_tag "logo.png", alt: "logo", class: "navbar-brand navbar-logo logo-1" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
@@ -83,7 +83,7 @@
           <a href="#" class="anchor-btn">Learn more <i class="fas fa-arrow-right pd-lt-10"></i></a> </div>
       </div>
       <div class="col-md-6 mb-50">
-        <div class="section-img"> <img src="images/about.jpg" alt="" class="img-responsive"/> </div>
+        <div class="section-img"> <%= image_tag 'about.jpg', alt: 'about', class: 'img-responsive' %> </div>
       </div>
     </div>
   </div>
@@ -226,15 +226,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> 
 <!-- owl carousel js --> 
-<script src="js/owl.carousel.min.js"></script> 
+<%= javascript_include_tag "owl.carousel.min" %>
 <!-- magnific-popup --> 
-<script src="js/jquery.fancybox.min.js"></script> 
+<%= javascript_include_tag "jquery.fancybox.min" %>
 
 <!-- scrollIt js --> 
-<script src="js/scrollIt.min.js"></script> 
+<%= javascript_include_tag "scrollIt.min" %>
 
 <!-- isotope.pkgd.min js --> 
-<script src="js/isotope.pkgd.min.js"></script> 
+<%= javascript_include_tag "isotope.pkgd.min" %>
 <script>
   $(window).on("scroll",function () {
 
