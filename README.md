@@ -2,7 +2,7 @@
 
 This is a fully functional website made with Ruby on Rails.The frontend is written in simple html and javascript. Postgresql is used as a database system for user handling and storing data. The website is hosted on Heroku and is made as a part of a CaptureTheFlag competition in that it has a bug which allows a user to abuse functionality and gain access to a certain product. 
 
-The full CTF is hosted at https://tryhackme.com/jr/revworks and the website is hosted at https://revworks.herokuapp.com/. The writeup/solution of the CTF is available at https://github.com/Zeeshan12340/writeups/blob/main/revworks.md.
+The full CTF is hosted at https://tryhackme.com/jr/revworks and the website itself can be checked out at https://revworks-4e7c9d83d182.herokuapp.com/. The writeup/solution of the CTF is available at https://github.com/Zeeshan12340/writeups/blob/main/revworks.md.
 
 Try to solve the CTF yourself before looking at the solution and let me know if you have any questions or suggestions.
 
